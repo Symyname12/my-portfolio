@@ -13,52 +13,52 @@ const Contact = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const myEmail = "azismubaroksaeful@gmail.com"; // Ganti dengan email Anda
+        const myEmail = "azismubaroksaeful@gmail.com";
         const mailtoLink = `mailto:${myEmail}?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent("Halo, nama saya " + formData.name + ". %0D%0A%0D%0A" + formData.message)}`;
         window.location.href = mailtoLink;
     };
 
     return (
-        <section id="contact" className="relative py-24 px-4 bg-white overflow-hidden">
-            {/* Dekorasi Background - Efek Cahaya AI */}
-            <div className="absolute top-1/4 right-0 w-96 h-96 bg-blue-50 rounded-full blur-[120px] -z-10 opacity-60"></div>
-            <div className="absolute bottom-0 left-0 w-72 h-72 bg-indigo-50 rounded-full blur-[100px] -z-10 opacity-60"></div>
+        <section id="contact" className="relative py-24 px-4 bg-transparent overflow-hidden">
+            {/* Background Glows */}
+            <div className="absolute top-1/4 right-0 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[120px] -z-10 opacity-50"></div>
+            <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-indigo-600/10 rounded-full blur-[100px] -z-10 opacity-50"></div>
 
-            <div className="max-w-6xl mx-auto">
-                <div className="flex flex-col lg:flex-row gap-16 items-start">
+            <div className="max-w-6xl mx-auto relative z-10">
+                <div className="flex flex-col lg:flex-row gap-16 items-center">
 
                     {/* SISI KIRI: Brand & Info */}
-                    <div className="w-full lg:w-5/12">
-                        <div className="inline-block px-4 py-1.5 mb-6 text-xs font-black tracking-[0.3em] text-blue-600 uppercase bg-blue-50 rounded-full">
+                    <div className="w-full lg:w-5/12 text-center lg:text-left">
+                        <div className="inline-block px-4 py-1.5 mb-6 text-[10px] font-black tracking-[0.4em] text-blue-400 uppercase bg-blue-500/10 rounded-lg border border-blue-500/20">
                             Get In Touch
                         </div>
-                        <h2 className="text-5xl md:text-6xl font-black text-gray-900 mb-8 leading-[1.1]">
+                        <h2 className="text-5xl md:text-7xl font-black text-white mb-8 leading-tight tracking-tighter">
                             Let's Build <br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-500">
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-400 to-cyan-400">
                                 Something Great.
                             </span>
                         </h2>
 
                         <div className="grid grid-cols-1 gap-4 mt-12">
-                            {/* Card Info 1 */}
-                            <div className="group p-6 bg-white border border-gray-100 rounded-[2rem] shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex items-center gap-5">
-                                <div className="w-14 h-14 bg-blue-600 rounded-2xl flex items-center justify-center text-white shadow-lg shadow-blue-200">
+                            {/* Card Email */}
+                            <div className="group p-6 bg-white/5 backdrop-blur-xl border border-white/10 rounded-[2rem] hover:border-blue-500/40 transition-all duration-500 flex items-center gap-5 shadow-2xl">
+                                <div className="w-14 h-14 bg-blue-600 rounded-2xl flex items-center justify-center text-white shadow-[0_0_20px_rgba(37,99,235,0.3)] group-hover:scale-110 transition-transform">
                                     <span className="text-2xl">📧</span>
                                 </div>
-                                <div>
-                                    <p className="text-xs font-bold text-gray-400 uppercase tracking-widest">Email Me</p>
-                                    <p className="font-bold text-gray-900 break-all text-sm md:text-base">azismubaroksaeful@gmail.com</p>
+                                <div className="text-left">
+                                    <p className="text-[10px] font-black text-blue-400 uppercase tracking-widest mb-1">Email Me</p>
+                                    <p className="font-bold text-white break-all text-sm md:text-base">azismubaroksaeful@gmail.com</p>
                                 </div>
                             </div>
 
-                            {/* Card Info 2 */}
-                            <div className="group p-6 bg-white border border-gray-100 rounded-[2rem] shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex items-center gap-5">
-                                <div className="w-14 h-14 bg-green-500 rounded-2xl flex items-center justify-center text-white shadow-lg shadow-green-200">
+                            {/* Card WhatsApp */}
+                            <div className="group p-6 bg-white/5 backdrop-blur-xl border border-white/10 rounded-[2rem] hover:border-green-500/40 transition-all duration-500 flex items-center gap-5 shadow-2xl">
+                                <div className="w-14 h-14 bg-green-500 rounded-2xl flex items-center justify-center text-white shadow-[0_0_20px_rgba(34,197,94,0.3)] group-hover:scale-110 transition-transform">
                                     <span className="text-2xl">💬</span>
                                 </div>
-                                <div>
-                                    <p className="text-xs font-bold text-gray-400 uppercase tracking-widest">WhatsApp</p>
-                                    <p className="font-bold text-gray-900">+62 812-2372-9311</p>
+                                <div className="text-left">
+                                    <p className="text-[10px] font-black text-green-400 uppercase tracking-widest mb-1">WhatsApp</p>
+                                    <p className="font-bold text-white text-sm md:text-base">+62 812-2372-9311</p>
                                 </div>
                             </div>
                         </div>
@@ -66,43 +66,49 @@ const Contact = () => {
 
                     {/* SISI KANAN: Contact Form */}
                     <div className="w-full lg:w-7/12 relative">
-                        {/* Hiasan Aksen di belakang Form */}
-                        <div className="absolute -top-6 -right-6 w-32 h-32 bg-yellow-400/10 rounded-full blur-2xl"></div>
+                        {/* Hiasan Aksen */}
+                        <div className="absolute -top-10 -right-10 w-40 h-40 bg-blue-500/20 rounded-full blur-3xl animate-pulse"></div>
 
-                        <div className="relative bg-white/80 backdrop-blur-md p-8 md:p-12 rounded-[3rem] border border-gray-100 shadow-2xl shadow-gray-200/50">
-                            <form onSubmit={handleSubmit} className="space-y-7">
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-7">
+                        <div className="relative bg-white/5 backdrop-blur-2xl p-8 md:p-12 rounded-[3rem] border border-white/10 shadow-2xl overflow-hidden">
+                            {/* Form Header */}
+                            <div className="mb-10">
+                                <h3 className="text-2xl font-black text-white tracking-tighter italic">Send Message</h3>
+                                <div className="w-12 h-1 bg-blue-500 mt-2 rounded-full"></div>
+                            </div>
+
+                            <form onSubmit={handleSubmit} className="space-y-6">
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                     <div className="space-y-2">
-                                        <label className="text-sm font-black text-gray-700 ml-2 uppercase tracking-tighter">Your Name</label>
+                                        <label className="text-[10px] font-black text-gray-400 ml-2 uppercase tracking-[0.2em]">Your Name</label>
                                         <input
                                             type="text" name="name" required value={formData.name} onChange={handleChange}
-                                            placeholder="John Doe"
-                                            className="w-full px-6 py-4 rounded-2xl bg-gray-50 border-none focus:ring-2 focus:ring-blue-500 transition-all font-medium"
+                                            placeholder="Enter your name"
+                                            className="w-full px-6 py-4 rounded-2xl bg-white/5 border border-white/10 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all text-white placeholder:text-gray-600 outline-none font-medium"
                                         />
                                     </div>
                                     <div className="space-y-2">
-                                        <label className="text-sm font-black text-gray-700 ml-2 uppercase tracking-tighter">Subject</label>
+                                        <label className="text-[10px] font-black text-gray-400 ml-2 uppercase tracking-[0.2em]">Subject</label>
                                         <input
                                             type="text" name="subject" required value={formData.subject} onChange={handleChange}
-                                            placeholder="Collaboration"
-                                            className="w-full px-6 py-4 rounded-2xl bg-gray-50 border-none focus:ring-2 focus:ring-blue-500 transition-all font-medium"
+                                            placeholder="Topic of discussion"
+                                            className="w-full px-6 py-4 rounded-2xl bg-white/5 border border-white/10 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all text-white placeholder:text-gray-600 outline-none font-medium"
                                         />
                                     </div>
                                 </div>
                                 <div className="space-y-2">
-                                    <label className="text-sm font-black text-gray-700 ml-2 uppercase tracking-tighter">Message</label>
+                                    <label className="text-[10px] font-black text-gray-400 ml-2 uppercase tracking-[0.2em]">Message</label>
                                     <textarea
                                         name="message" required value={formData.message} onChange={handleChange}
-                                        rows="4" placeholder="Tell me about your idea..."
-                                        className="w-full px-6 py-4 rounded-2xl bg-gray-50 border-none focus:ring-2 focus:ring-blue-500 transition-all font-medium resize-none"
+                                        rows="4" placeholder="How can I help you?"
+                                        className="w-full px-6 py-4 rounded-2xl bg-white/5 border border-white/10 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all text-white placeholder:text-gray-600 outline-none font-medium resize-none"
                                     ></textarea>
                                 </div>
                                 <button
                                     type="submit"
-                                    className="w-full py-5 bg-gray-900 text-white font-black rounded-2xl shadow-xl hover:bg-blue-600 hover:scale-[1.02] active:scale-95 transition-all duration-300 flex items-center justify-center gap-3 group text-lg"
+                                    className="w-full py-5 bg-blue-600 text-[#020617] font-black rounded-2xl shadow-[0_0_30px_rgba(37,99,235,0.4)] hover:bg-blue-400 hover:scale-[1.02] active:scale-95 transition-all duration-300 flex items-center justify-center gap-3 group text-sm tracking-[0.2em]"
                                 >
-                                    SEND MESSAGE
-                                    <span className="group-hover:translate-x-2 transition-transform duration-300">🚀</span>
+                                    TRANSMIT MESSAGE
+                                    <span className="group-hover:translate-x-2 group-hover:-translate-y-1 transition-transform duration-300 text-lg">🚀</span>
                                 </button>
                             </form>
                         </div>

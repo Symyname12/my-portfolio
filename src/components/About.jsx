@@ -1,56 +1,76 @@
 const About = () => {
     return (
-        <section id="about" className="py-24 px-4 bg-white overflow-hidden">
-            <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-16">
+        <section id="about" className="relative py-24 px-4 overflow-hidden bg-transparent">
+            <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-16 relative z-10">
 
-                {/* Bagian Visual Foto */}
-                <div className="w-full md:w-1/2 relative">
-                    {/* Elemen Dekoratif di belakang foto */}
-                    <div className="absolute -top-10 -left-10 w-64 h-64 bg-blue-100 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob"></div>
-                    <div className="absolute -bottom-10 -right-10 w-64 h-64 bg-indigo-100 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2000"></div>
+                {/* Bagian Visual Foto dengan Frame Futuristik */}
+                <div className="w-full md:w-1/2 relative group">
+                    {/* Glow Ornaments di belakang foto */}
+                    <div className="absolute -top-10 -left-10 w-72 h-72 bg-blue-600/20 rounded-full mix-blend-screen filter blur-[80px] opacity-50 group-hover:opacity-80 transition-opacity"></div>
 
                     <div className="relative">
-                        <div className="aspect-[4/5] bg-gray-200 rounded-[2.5rem] overflow-hidden shadow-2xl border-[12px] border-white transform -rotate-3 hover:rotate-0 transition-transform duration-500">
-                            <img
-                                src="/foto-profil.jpeg"
-                                alt="Saeful Aziz"
-                                className="w-full h-full object-cover"
-                            />
+                        {/* Frame Utama dengan Border Gradasi Neon */}
+                        <div className="relative aspect-[4/5] p-[2px] rounded-[3rem] bg-gradient-to-br from-blue-500 via-transparent to-indigo-600 shadow-2xl overflow-hidden transform md:-rotate-3 group-hover:rotate-0 transition-transform duration-700">
+
+                            {/* Inner Glass Container */}
+                            <div className="w-full h-full bg-[#020617] rounded-[2.9rem] overflow-hidden relative">
+                                <img
+                                    src="/foto-profil.jpeg"
+                                    alt="Saeful Aziz"
+                                    className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 filter grayscale-[20%] group-hover:grayscale-0"
+                                />
+
+                                {/* Overlay Gradient di Foto */}
+                                <div className="absolute inset-0 bg-gradient-to-t from-[#020617] via-transparent to-transparent opacity-60"></div>
+                            </div>
                         </div>
-                        {/* Tag Melayang di Foto */}
-                        <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-2xl shadow-xl border border-gray-50 flex items-center gap-4">
-                            <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-xl">
-                                🚀
+
+                        {/* Floating Tech Badge (Tag Melayang) */}
+                        <div className="absolute -bottom-6 -right-2 md:-right-6 bg-white/5 backdrop-blur-xl p-5 rounded-3xl border border-white/10 shadow-2xl flex items-center gap-4 animate-bounce-slow">
+                            <div className="w-12 h-12 bg-blue-600 rounded-2xl flex items-center justify-center text-white shadow-[0_0_20px_rgba(37,99,235,0.4)]">
+                                <span className="text-xl">🚀</span>
                             </div>
                             <div>
-                                <p className="text-sm font-black text-gray-900 leading-none">Hima IF IWU</p>
-                                <p className="text-xs text-gray-500 mt-1">Chairman 25/26</p>
+                                <p className="text-xs font-black text-blue-400 uppercase tracking-widest leading-none">Hima IF IWU</p>
+                                <p className="text-lg font-black text-white mt-1 leading-none tracking-tighter">CHAIRMAN</p>
                             </div>
                         </div>
+
+                        {/* Dekorasi Garis Tech */}
+                        <div className="absolute -top-4 -right-4 w-24 h-24 border-t-2 border-r-2 border-blue-500/30 rounded-tr-3xl"></div>
+                        <div className="absolute -bottom-4 -left-4 w-24 h-24 border-b-2 border-l-2 border-indigo-500/30 rounded-bl-3xl"></div>
                     </div>
                 </div>
 
                 {/* Bagian Teks Deskripsi */}
-                <div className="w-full md:w-1/2">
-                    <h4 className="text-blue-600 font-bold tracking-widest uppercase text-sm mb-4">Discovery</h4>
-                    <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-6 leading-tight">
-                        Bridging Technology with <span className="text-blue-600">Leadership.</span>
-                    </h2>
-                    <p className="text-lg text-gray-600 leading-relaxed mb-8">
-                        Halo! Saya <span className="font-bold text-gray-900">Saeful Aziz Mubarok</span>.
-                        Sebagai pengembang yang berfokus pada AI-driven development, saya percaya bahwa teknologi adalah alat untuk memecahkan masalah kompleks.
-                        Melalui peran saya sebagai Ketua Hima, saya mengasah kemampuan manajerial dan teknis untuk menciptakan solusi digital yang berdampak luas.
-                    </p>
+                <div className="w-full md:w-1/2 text-left">
+                    <div className="inline-block px-4 py-1.5 mb-6 text-[10px] font-black tracking-[0.4em] text-blue-400 uppercase bg-blue-500/10 rounded-lg border border-blue-500/20">
+                        Profile Discovery
+                    </div>
 
-                    {/* Statistik Minimalis */}
-                    <div className="grid grid-cols-2 gap-8 border-t border-gray-100 pt-8">
-                        <div>
-                            <h5 className="text-3xl font-black text-gray-900">10+</h5>
-                            <p className="text-gray-500 text-sm font-medium uppercase tracking-wider">Project Handled</p>
+                    <h2 className="text-4xl md:text-6xl font-black text-white mb-8 leading-[1.1] tracking-tighter">
+                        Bridging Technology with <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400">Leadership.</span>
+                    </h2>
+
+                    <div className="space-y-6">
+                        <p className="text-lg text-gray-400 leading-relaxed font-medium">
+                            Halo! Saya <span className="text-white font-bold italic">Saeful Aziz Mubarok</span>.
+                            Sebagai pengembang yang berfokus pada <span className="text-blue-400 underline decoration-blue-500/30 underline-offset-4">AI-Driven Development</span>, saya percaya bahwa teknologi adalah instrumen utama untuk memecahkan tantangan masa depan.
+                        </p>
+                        <p className="text-lg text-gray-400 leading-relaxed font-medium">
+                            Melalui peran strategis saya di Himpunan, saya mengintegrasikan manajemen tim dengan inovasi teknis untuk membangun ekosistem digital yang adaptif dan inklusif.
+                        </p>
+                    </div>
+
+                    {/* Statistik Minimalis (Dark Version) */}
+                    <div className="grid grid-cols-2 gap-8 border-t border-white/10 mt-12 pt-8">
+                        <div className="group">
+                            <h5 className="text-4xl font-black text-white group-hover:text-blue-500 transition-colors tracking-tighter">10+</h5>
+                            <p className="text-gray-500 text-[10px] font-black uppercase tracking-[0.2em] mt-2">Projects Handled</p>
                         </div>
-                        <div>
-                            <h5 className="text-3xl font-black text-gray-900">01+</h5>
-                            <p className="text-gray-500 text-sm font-medium uppercase tracking-wider">Leadership Role</p>
+                        <div className="group">
+                            <h5 className="text-4xl font-black text-white group-hover:text-indigo-500 transition-colors tracking-tighter">01+</h5>
+                            <p className="text-gray-500 text-[10px] font-black uppercase tracking-[0.2em] mt-2">Leadership Role</p>
                         </div>
                     </div>
                 </div>

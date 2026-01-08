@@ -25,15 +25,15 @@ const Certificates = () => {
             id: "IPB-25"
         },
         {
-            title: "BANDUNG INITIATIVE COLECTIVE FOR CHANCE",
-            company: "CONNECTING BANDUNG COMMUNITY",
+            title: "BI2C COLECTIVE",
+            company: "CONNECTING BANDUNG",
             date: "2025",
             fileUrl: "/Sertif-bi2c.jpg",
             isPdf: false,
             id: "BI2C-25"
         },
         {
-            title: "SEKOLAH KADERISASI MAHASISWA",
+            title: "KADERISASI MAHASISWA",
             company: "BEM IWU",
             date: "2024",
             fileUrl: "/1.jpg",
@@ -51,49 +51,49 @@ const Certificates = () => {
     ];
 
     return (
-        <section id="certificates" className="relative py-24 px-4 bg-white overflow-hidden">
-            {/* Dekorasi Cahaya Latar */}
-            <div className="absolute top-0 right-0 w-96 h-96 bg-blue-50/60 rounded-full blur-[120px] -z-10"></div>
+        <section id="certificates" className="relative py-24 px-4 bg-transparent overflow-hidden">
+            {/* Background Glow Ornament */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[120px] pointer-events-none"></div>
 
-            <div className="max-w-6xl mx-auto">
+            <div className="max-w-6xl mx-auto relative z-10">
                 {/* Header Section */}
-                <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
-                    <div className="text-left">
-                        <h4 className="text-blue-600 font-black tracking-[0.3em] uppercase text-xs mb-3">Professional Validation</h4>
-                        <h2 className="text-5xl font-black text-gray-900 leading-tight">
-                            Certifications <br /> & <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-500 text-6xl">Achievements.</span>
-                        </h2>
+                <div className="mb-16">
+                    <div className="inline-block px-4 py-1.5 mb-6 text-[10px] font-black tracking-[0.4em] text-blue-400 uppercase bg-blue-500/10 rounded-lg border border-blue-500/20">
+                        Professional Validation
                     </div>
+                    <h2 className="text-4xl md:text-6xl font-black text-white leading-tight tracking-tighter">
+                        Certifications <br /> & <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-400 to-cyan-400">Achievements.</span>
+                    </h2>
                 </div>
 
-                {/* Grid Sertifikat */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {/* Grid Sertifikat - Responsive Adjustments */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {certs.map((cert, index) => (
                         <div
                             key={index}
-                            className="group relative bg-white border border-gray-100 p-8 rounded-[2.5rem] transition-all duration-500 hover:shadow-[0_20px_50px_rgba(37,99,235,0.12)] hover:-translate-y-2 flex flex-col justify-between overflow-hidden"
+                            className="group relative bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-[2rem] transition-all duration-500 hover:border-blue-500/50 hover:bg-white/10 flex flex-col justify-between overflow-hidden"
                         >
-                            {/* Garis Aksen saat Hover */}
-                            <div className="absolute top-0 left-0 w-1.5 h-0 bg-blue-600 group-hover:h-full transition-all duration-500"></div>
+                            {/* Blue Line Accent on Hover */}
+                            <div className="absolute top-0 right-0 w-0 h-1 bg-gradient-to-r from-blue-500 to-cyan-400 group-hover:w-full transition-all duration-700"></div>
 
                             <div>
                                 <div className="flex justify-between items-start mb-8">
-                                    <div className="w-14 h-14 bg-gray-50 rounded-2xl flex items-center justify-center text-2xl group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 shadow-inner">
+                                    <div className="w-14 h-14 bg-white/5 rounded-2xl flex items-center justify-center text-2xl group-hover:scale-110 group-hover:bg-blue-600 transition-all duration-500 border border-white/10 shadow-inner">
                                         {cert.isPdf ? "📄" : "📜"}
                                     </div>
-                                    <span className="text-[10px] font-mono text-gray-300 font-bold tracking-widest uppercase">
+                                    <span className="text-[10px] font-mono text-gray-500 font-bold tracking-widest uppercase">
                                         {cert.id}
                                     </span>
                                 </div>
 
                                 <div className="space-y-3">
-                                    <p className="text-blue-600 text-xs font-black uppercase tracking-widest leading-none">
+                                    <p className="text-blue-400 text-[10px] font-black uppercase tracking-[0.2em] leading-none">
                                         {cert.company}
                                     </p>
-                                    <h3 className="text-xl font-black text-gray-900 leading-tight group-hover:text-blue-600 transition-colors">
+                                    <h3 className="text-xl font-black text-white leading-[1.2] group-hover:text-blue-400 transition-colors tracking-tighter">
                                         {cert.title}
                                     </h3>
-                                    <div className="inline-block px-3 py-1 bg-gray-50 rounded-full text-[10px] font-bold text-gray-400 border border-gray-100 uppercase tracking-tighter">
+                                    <div className="inline-block px-3 py-1 bg-white/5 rounded-lg text-[10px] font-bold text-gray-400 border border-white/5 uppercase tracking-tighter mt-2">
                                         Issued {cert.date}
                                     </div>
                                 </div>
@@ -104,19 +104,23 @@ const Certificates = () => {
                                     href={cert.fileUrl}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="relative inline-flex items-center gap-2 font-black text-xs tracking-tighter group-hover:gap-4 transition-all"
+                                    className="relative inline-flex items-center gap-2 font-black text-[10px] text-white tracking-widest group-hover:gap-4 transition-all uppercase"
                                 >
                                     OPEN CREDENTIAL
-                                    <span className="text-blue-600 text-lg">→</span>
+                                    <span className="text-blue-400 group-hover:translate-x-1 transition-transform">→</span>
                                 </a>
-                                <div className="w-2 h-2 rounded-full bg-blue-600 animate-pulse"></div>
+                                <div className="flex gap-1.5">
+                                    <div className="w-1.5 h-1.5 rounded-full bg-blue-500 shadow-[0_0_10px_rgba(59,130,246,0.8)] animate-pulse"></div>
+                                    <div className="w-1.5 h-1.5 rounded-full bg-blue-500/20"></div>
+                                </div>
                             </div>
                         </div>
                     ))}
                 </div>
 
-                <div className="mt-20 py-8 border-t border-dashed border-gray-200 text-center">
-                    <p className="text-gray-400 text-sm font-medium italic">
+                {/* Footer Quote in Certificates */}
+                <div className="mt-24 py-10 border-t border-white/5 text-center">
+                    <p className="text-gray-500 text-sm font-medium italic tracking-wide max-w-2xl mx-auto leading-relaxed">
                         "Organizing and learning to build a better future in the 5.0 Era."
                     </p>
                 </div>
