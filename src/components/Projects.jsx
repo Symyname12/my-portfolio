@@ -10,11 +10,11 @@ const Projects = () => {
             number: "01"
         },
         {
-            title: "Portfolio Website",
-            description: "Website portfolio pribadi responsif dengan optimasi SEO dan animasi interaktif tingkat tinggi menggunakan React.",
-            image: "/project2.jpg",
-            repoUrl: "https://github.com/Symyname12/my-portfolio",
-            demoUrl: "https://saefulaziz.vercel.app",
+            title: "Go services",
+            description: "Solusi digital terintegrasi untuk operasional bengkel otomotif. Menampilkan sistem manajemen booking yang intuitif, kontrol inventaris otomatis dengan fitur critical-stock alert, dan dashboard admin yang komprehensif. Dibangun dengan fokus pada kecepatan performa dan desain visual yang agresif namun fungsional.",
+            image: "my-portfolio/public/Goservice.png",
+            repoUrl: "https://github.com/Symyname12/go_services",
+            demoUrl: "go-services1212.netlify.app",
             tags: ["Vite", "React", "Framer"],
             number: "02"
         }
