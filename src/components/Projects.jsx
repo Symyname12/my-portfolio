@@ -12,7 +12,7 @@ const Projects = () => {
         {
             title: "Go services",
             description: "Solusi digital terintegrasi untuk operasional bengkel otomotif. Menampilkan sistem manajemen booking yang intuitif, kontrol inventaris otomatis dengan fitur critical-stock alert, dan dashboard admin yang komprehensif. Dibangun dengan fokus pada kecepatan performa dan desain visual yang agresif namun fungsional.",
-            image: "my-portfolio/public/Goservice.png",
+            image: "/go-service.png",
             repoUrl: "https://github.com/Symyname12/go_services",
             demoUrl: "go-services1212.netlify.app",
             tags: ["Vite", "React", "Framer"],
